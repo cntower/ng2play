@@ -1,3 +1,143 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-container fullscreen>
+  <md-sidenav mode="side" opened="true">
+
+    <div class="user-wrap clearfix">
+      <img src="../assets/img/photo.png" alt="" class="user-photo left">
+      <h2 class="user-name left">
+        Trevor Reyes
+      </h2>
+    </div>
+    <div class="projects-plus clearfix">
+      <h3 class="left">
+        Projects
+      </h3>
+      <a href="#" class="icons8-plus right"></a>
+    </div>
+
+    <button md-button class="left active"><h3 class="left">Private</h3><p class="right">8</p></button>
+    <button md-button class="left"><h3 class="left">Decode</h3><p class="right">25</p></button>
+    <button md-button class="left"><h3 class="left">Family</h3><p class="right">3</p></button>
+    <button md-button class="left"><h3 class="left">Cookle</h3><p class="right">13</p></button>
+    <button md-button class="log-out"><h3 class="left">Log out</h3></button>
+
+  </md-sidenav>
+  <md-toolbar class="md-whiteframe-glow-z1 site-content-toolbar" [color]="myColor">
+    <span>My Application Title</span>
+  </md-toolbar>
+  <div class="dates-list">
+    <div class="date-wrap">
+      <div class="date-wrap-head">
+        <h2 class="text date">
+          Today
+        </h2>
+      </div>
+      <md-card>
+        <div class="card-list">
+          <div class="card-item clearfix">
+            <a href="#" class="task-checkbox left"></a>
+            <p class="text left">Create a company</p>
+          </div>
+
+        </div>
+      </md-card>
+    </div>
+
+    <div class="date-wrap">
+      <div class="date-wrap-head">
+        <h2 class="text date">
+          Tomorrow
+        </h2>
+      </div>
+      <md-card>
+        <div class="card-list">
+          <div class="card-item clearfix">
+            <a href="#" class="task-checkbox left"></a>
+            <p class="text left">Call in barber shop</p>
+          </div>
+
+        </div>
+      </md-card>
+    </div>
+
+    <div class="date-wrap">
+      <div class="date-wrap-head">
+        <h2 class="text date">
+          Friday <span>(09.06.2016)</span>
+        </h2>
+      </div>
+      <md-card>
+        <div class="card-list">
+
+          <div class="card-item clearfix">
+            <a href="#" class="task-checkbox left"></a>
+            <p class="text left">Earn a lot of money</p>
+          </div>
+
+          <div class="card-item clearfix">
+            <a href="#" class="task-checkbox left"></a>
+            <p class="text left">Go to the shop</p>
+          </div>
+
+        </div>
+      </md-card>
+    </div>
+    <div class="date-wrap">
+      <div class="date-wrap-head">
+        <h2 class="text date">
+          Saturday <span>(10.06.2016)</span>
+        </h2>
+      </div>
+      <md-card>
+        <div class="card-list">
+          <div class="card-item clearfix">
+            <a href="#" class="task-checkbox left"></a>
+            <p class="text left">Buy gifts</p>
+          </div>
+
+        </div>
+      </md-card>
+    </div>
+    <div class="date-wrap">
+      <div class="date-wrap-head">
+        <h2 class="text date">
+          Sunday <span>(11.06.2016)</span>
+        </h2>
+      </div>
+      <md-card>
+        <div class="card-list">
+          <div class="card-item clearfix">
+            <a href="#" class="task-checkbox left"></a>
+            <p class="text left">Brush teeth</p>
+          </div>
+
+        </div>
+      </md-card>
+    </div>
+    <div class="date-wrap">
+      <div class="date-wrap-head">
+        <h2 class="text date">
+          Monday <span>(12.06.2016)</span>
+        </h2>
+      </div>
+      <md-card>
+        <div class="card-list">
+
+          <div class="card-item clearfix">
+            <a href="#" class="task-checkbox left"></a>
+            <p class="text left">Buy a plane tickets</p>
+          </div>
+
+          <div class="card-item clearfix">
+            <a href="#" class="task-checkbox left"></a>
+            <p class="text left">Fly away to the Thailand</p>
+          </div>
+
+        </div>
+      </md-card>
+    </div>
+
+  </div>
+
+  <router-outlet></router-outlet>
+</md-sidenav-container>
+<a href="#" class="plus icons8-plus"></a>

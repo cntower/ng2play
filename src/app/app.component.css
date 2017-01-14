@@ -1,0 +1,180 @@
+html, body, material-app, md-sidenav-container, .my-content {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+a, a:hover {
+    text-decoration: none;
+    outline: none;
+}
+p, h2, h3 {
+    margin: 0;
+}
+.clearfix:before,
+.clearfix:after{
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+md-sidenav {
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    width: 565px;
+    padding: 0 60px;
+    background: #292c33;
+}
+
+md-sidenav.md-sidenav-opened, md-sidenav.md-sidenav-opening {
+    box-shadow: none;
+}
+.user-photo {
+    width: 100px;
+    height: 100px;
+    border: #fff 2px solid;
+    padding: 8px;
+    border-radius: 50%;
+    margin-left:20px;
+}
+.user-wrap {
+    margin: 40px 0;
+}
+.user-wrap h2{
+    font-size: 30px;
+    letter-spacing: .8pt;
+    font-weight: 500;
+    line-height: 120px;
+    margin: 0 40px;
+}
+.projects-plus h3 {
+    font-size: 24px;
+    letter-spacing: 1pt;
+    font-weight: 500;
+    line-height: 97px;
+    margin: 0 30px;
+}
+.projects-plus a {
+    color: #fff;
+    font-size: 40px;
+    line-height: 97px;
+    /*margin-top: 3px;*/
+    margin-right: 22px;
+}
+md-sidenav button {
+    border-radius: 8px;
+    height: 80px;
+    width:100%;
+}
+md-sidenav button.active {
+    background: #6b6b99;
+}
+md-sidenav button h3 {
+    margin: 0 0 0 15px;
+    line-height: 80px;
+    font-size: 30px; 
+    font-weight: 500;
+    letter-spacing: 1pt;
+        
+}
+md-sidenav button p {
+    margin: 0 15px 0 0;
+    line-height: 80px;
+    font-size: 30px; 
+    font-weight: 500; 
+}
+.log-out {
+    position: absolute;
+    left: 0;
+    bottom: 26px;
+}
+.plus {
+    display: inline-block;
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #6b6b99;
+    color: #fff;
+    font-size: 60px;
+    text-align: center;
+    line-height: 100px;
+}
+.dates-list {
+    position: relative;
+    padding: 100px 460px; 
+}
+md-card {
+    padding: 0;
+    border-radius: 14px;
+    box-shadow: 5px 9px 30px 0px rgba(0, 0, 0, 0.16); 
+}
+.card-item {
+    line-height: 120px;
+}
+.date-wrap-head {
+    height: 81px;
+    position: relative;    
+}
+.text {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 30px;
+    letter-spacing: 1pt;
+    font-weight: bold;    
+}
+.date-wrap-head .text {
+    position: absolute;
+    bottom: 12px;
+    left: 15px;
+    color: #b3bbcb;
+}
+.date-wrap-head .text span {
+    font-size: 24px;
+    letter-spacing: 0;    
+}
+.card-item .text {
+    color: #212121;
+    padding-left: 33px;
+    letter-spacing: 0.5pt;
+}
+.task-checkbox {
+    display: block;
+    width: 28px;
+    height: 28px;
+    border: 6px solid #bdbdbd;
+    border-radius: 50%;
+    margin: 40px 65px;
+}
+.task-checkbox:after {
+    margin-left: 98px;
+    margin-top: -30px;
+    content: '';
+    display: block;
+    width: 2px;
+    height: 80px;
+    background-color: #eaeaea;
+}
+.card-item:after {
+    content:'';
+    display: block;
+    height: 2px;
+    background-color:  #eaeaea;
+    margin: -1px 121px;
+}
+.card-item:last-child:after {
+    width: 0;
+}
