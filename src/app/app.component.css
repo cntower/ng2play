@@ -110,7 +110,7 @@ md-card {
     line-height: 120px;
 }
 .date-wrap-head {
-    height: 81px;
+    height: 82px;
     position: relative;    
 }
 .text {
@@ -129,10 +129,21 @@ md-card {
     font-size: 24px;
     letter-spacing: 0;    
 }
-.card-item .text {
+.card-item-tail {
+    margin-left: 172px;
+    margin-right: 20px;
+}
+.card-item .text { /*btn*/
+    text-align: left;
+    width: 100%;
     color: #212121;
     padding-left: 33px;
+    padding-right: 35px;
     letter-spacing: 0.5pt;
+    height: 80px;
+    margin-top: 20px;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
 }
 .task-btn {
     width: 100px;
@@ -148,7 +159,7 @@ md-card {
 }
 .task-checkbox:after {
     margin-left: 98px;
-    margin-top: -30px;
+    margin-top: -26px;
     content: '';
     display: block;
     width: 2px;
@@ -163,8 +174,13 @@ md-card {
     margin: -1px 121px;
 }
 .card-item:last-child:after {
+    display: block;
+    content:'';
     width: 0;
+    height: 0;
+    margin: 0;
 }
+
 .example-fill-remaining-space {
   flex: 1 1 auto;
 }
@@ -193,7 +209,7 @@ md-toolbar {
 }
 .plus-icon.icons8-checkmark{
     font-size: 45px;
-    margin-right: -58px;
+    margin-right: 0px;
 }
 .projects-plus-icon {
     width:60px;
@@ -203,6 +219,20 @@ md-toolbar {
     margin-top: 20px;
     margin-right: 12px;    
 }
+.esc-btn {
+    margin-top: 20px;
+    padding-top: 20px;
+    color: #fff;
+    font-size: 50px;
+    width: 100px;
+    height: 100px;
+}
+.esc-btn:after {
+    margin-top: -10px;
+    font-size: 18px;
+    content:'ESC';
+    display: block;
+} 
 button.drop-menu {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     height: 80px;
@@ -230,4 +260,54 @@ md-sidenav.md-sidenav-end.md-sidenav-opened {
 md-sidenav.slave {
     padding: 0;
     width:1000px;
+}
+.slave .title {
+    font-size: 36px;
+    letter-spacing: 1.15pt;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 60px;
+}
+.slave .container {
+    height: 60%;    
+    margin: 0 158px;
+}
+.slave md-input-container {
+    width: 100%;
+    margin-top: 50px;
+}
+label.md-input-placeholder {
+    margin-left: 10px;
+}
+.slave-input, .md-input-placeholder {
+    width: 100%;
+    color: #fff;
+}
+.slave-textarea {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;  
+    margin-top: -10px;  
+    height: 800px;
+    font-size: 24px;
+    line-height:45px;
+    letter-spacing: 1.15pt;
+    color: #dbdbdb;
+    resize: vertical;    
+}
+.delete-tack-btn {
+    color: #51555e;
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    right: 35px;
+    top: 40px;
+    font-size: 40px;
+}
+.edit-tack-btn {
+    color: #51555e;    
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    right: 115px;
+    top: 40px;
+    font-size: 40px;
 }

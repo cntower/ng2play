@@ -1,0 +1,28 @@
+@import '~@angular/material/core/theming/all-theme';
+@include md-core();
+$primary: md-palette($md-orange, 800);
+$accent:  md-palette($md-light-blue, 600, A100, A400);
+$warn:    md-palette($md-red, 600);
+$theme: md-light-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+
+
+
+.m2app-dark {
+  $dark-primary: md-palette($md-green, 700, 500, 900);
+  $dark-accent:  md-palette($md-blue-grey, A200, A100, A400);
+  $dark-warn:    md-palette($md-deep-orange);
+
+  $dark-theme: md-dark-theme($dark-primary, $dark-accent, $dark-warn);
+  @include angular-material-theme($dark-theme);
+}
+md-input-container {
+  font-size: 30px;
+}
+.md-input-placeholder.md-empty {
+  padding-left: 10px;
+}
+md-input-container .md-input-underline {
+  border-top-width: 5px;
+  margin-top: 5px;
+}

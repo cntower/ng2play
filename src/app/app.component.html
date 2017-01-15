@@ -11,7 +11,7 @@
       <h3 class="left">
         Projects
       </h3>
-      <button md-button md-icon-button class="projects-plus-icon icons8-plus right" (click)="taskadd.hidden = true; projectAdd.open()"></button>
+      <button md-button md-icon-button class="projects-plus-icon icons8-plus right" (click)="newProject.hidden=false;sidenavRight.open()"></button>
     </div>
 
     <button md-button class="menu-btn left active"><h3 class="menu-btn-title left">Private</h3><p class="right">8</p></button>
@@ -27,7 +27,6 @@
     <button md-button md-icon-button class="bar-icon icons8-search"></button>
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
-    <!--button md-button md-icon-button class="bar-icon icons8-more"></button-->
 
     <button md-icon-button class="bar-icon icons8-more" [mdMenuTriggerFor]="menu"></button>
     <md-menu #menu="mdMenu">
@@ -40,8 +39,42 @@
 
   </md-toolbar>
 
-  <md-sidenav #projectAdd class="slave" (close-start)="taskadd.hidden=false" align="end">
-    <button md-button (click)="projectAdd.close()">Close</button>
+  <md-sidenav #sidenavRight class="slave m2app-dark" (close-start)="taskAddBtn.hidden=false" (close)="newProject.hidden=newTask.hidden=openTask.hidden=true"
+    (open-start)="taskAddBtn.hidden = true" align="end">
+    <button md-icon-button class="esc-btn icons8-delete-2 left" (click)="sidenavRight.close()"></button>
+
+    <div class="container">
+
+      <div #newProject hidden=true>
+        <h2 class="title">Create new project</h2>
+        <md-input-container>
+          <input class="slave-input" md-input placeholder="Project name">
+        </md-input-container>
+      </div>
+
+      <div #newTask hidden=true>
+        <h2 class="title">Create new task</h2>
+        <md-input-container>
+          <input class="slave-input" md-input placeholder="Task name">
+        </md-input-container>
+        <md-input-container>
+          <input class="slave-input" md-input placeholder="Description">
+        </md-input-container>
+      </div>
+
+      <div #openTask hidden=true>
+        <button md-icon-button class="delete-tack-btn icons8-delete right"></button>
+        <button md-icon-button class="edit-tack-btn icons8-edit right"></button>
+
+        <h2 class="title">Call in barber shop</h2>
+        <md-input-container>
+          <textarea disabled class="slave-textarea" md-input>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </textarea>
+        </md-input-container>
+      </div>
+
+    </div>
+
     <button md-button md-icon-button class="plus-icon icons8-checkmark"></button>
   </md-sidenav>
 
@@ -56,7 +89,9 @@
         <div class="card-list">
           <div class="card-item clearfix">
             <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
-            <p class="text left">Create a company</p>
+            <div class="card-item-tail">
+              <button md-button class="text left" (click)="openTask.hidden=false;sidenavRight.open()">Create a company</button>
+            </div>
           </div>
 
         </div>
@@ -73,7 +108,9 @@
         <div class="card-list">
           <div class="card-item clearfix">
             <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
-            <p class="text left">Call in barber shop</p>
+            <div class="card-item-tail">
+              <button md-button class="text left" (click)="openTask.hidden=false;sidenavRight.open()">Call in barber shop</button>
+            </div>
           </div>
 
         </div>
@@ -91,12 +128,16 @@
 
           <div class="card-item clearfix">
             <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
-            <p class="text left">Earn a lot of money</p>
+            <div class="card-item-tail">
+              <button md-button class="text left" (click)="openTask.hidden=false;sidenavRight.open()">Earn a lot of money</button>
+            </div>
           </div>
 
           <div class="card-item clearfix">
             <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
-            <p class="text left">Go to the shop</p>
+            <div class="card-item-tail">
+              <button md-button class="text left" (click)="openTask.hidden=false;sidenavRight.open()">Go to the shop</button>
+            </div>
           </div>
 
         </div>
@@ -112,7 +153,9 @@
         <div class="card-list">
           <div class="card-item clearfix">
             <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
-            <p class="text left">Buy gifts</p>
+            <div class="card-item-tail">
+              <button md-button class="text left" (click)="openTask.hidden=false;sidenavRight.open()">Buy gifts</button>
+            </div>
           </div>
 
         </div>
@@ -128,7 +171,9 @@
         <div class="card-list">
           <div class="card-item clearfix">
             <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
-            <p class="text left">Brush teeth</p>
+            <div class="card-item-tail">
+              <button md-button class="text left" (click)="openTask.hidden=false;sidenavRight.open()">Brush teeth</button>
+            </div>
           </div>
 
         </div>
@@ -145,12 +190,17 @@
 
           <div class="card-item clearfix">
             <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
-            <p class="text left">Buy a plane tickets</p>
+            <div class="card-item-tail">
+              <button md-button class="text left" (click)="openTask.hidden=false;sidenavRight.open()">Buy a plane tickets</button>
+            </div>
           </div>
 
           <div class="card-item clearfix">
             <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
-            <p class="text left">Fly away to the Thailand</p>
+            <div class="card-item-tail">
+              <button md-button class="text left" (click)="openTask.hidden=false;sidenavRight.open()">Fly away to the Thailand</button>
+            </div>
+
           </div>
 
         </div>
@@ -161,6 +211,6 @@
 
   <router-outlet></router-outlet>
 </md-sidenav-container>
-<div #taskadd>
-<button md-button md-icon-button class="plus-icon icons8-plus"></button>
+<div #taskAddBtn>
+  <button md-button md-icon-button class="plus-icon icons8-plus" (click)="newTask.hidden=false;sidenavRight.open()"></button>
 </div>
