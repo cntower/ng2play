@@ -1,5 +1,5 @@
 <md-sidenav-container fullscreen>
-  <md-sidenav mode="side" opened="true">
+  <md-sidenav class="main" mode="side" opened="true">
 
     <div class="user-wrap clearfix">
       <img src="../assets/img/photo.png" alt="" class="user-photo left">
@@ -11,20 +11,41 @@
       <h3 class="left">
         Projects
       </h3>
-      <a href="#" class="icons8-plus right"></a>
+      <button md-button md-icon-button class="projects-plus-icon icons8-plus right" (click)="taskadd.hidden = true; projectAdd.open()"></button>
     </div>
 
-    <button md-button class="left active"><h3 class="left">Private</h3><p class="right">8</p></button>
-    <button md-button class="left"><h3 class="left">Decode</h3><p class="right">25</p></button>
-    <button md-button class="left"><h3 class="left">Family</h3><p class="right">3</p></button>
-    <button md-button class="left"><h3 class="left">Cookle</h3><p class="right">13</p></button>
-    <button md-button class="log-out"><h3 class="left">Log out</h3></button>
+    <button md-button class="menu-btn left active"><h3 class="menu-btn-title left">Private</h3><p class="right">8</p></button>
+    <button md-button class="menu-btn left"><h3 class="menu-btn-title left">Decode</h3><p class="right">25</p></button>
+    <button md-button class="menu-btn left"><h3 class="menu-btn-title left">Family</h3><p class="right">3</p></button>
+    <button md-button class="menu-btn"><h3 class="menu-btn-title left">Cookle</h3><p class="right">13</p></button>
+    <button md-button class="menu-btn log-out"><h3 class="menu-btn-title left">Log out</h3></button>
 
   </md-sidenav>
-  <md-toolbar class="md-whiteframe-glow-z1 site-content-toolbar" [color]="myColor">
-    <span>My Application Title</span>
+
+  <md-toolbar>
+
+    <button md-button md-icon-button class="bar-icon icons8-search"></button>
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+    <!--button md-button md-icon-button class="bar-icon icons8-more"></button-->
+
+    <button md-icon-button class="bar-icon icons8-more" [mdMenuTriggerFor]="menu"></button>
+    <md-menu #menu="mdMenu">
+      <div class="shadow">
+      </div>
+      <button class="drop-menu" md-menu-item><i class="icons8-edit left"></i><span>Edit</span></button>
+      <button class="drop-menu" md-menu-item><i class="icons8-delete left"></i><span>Delete</span></button>
+
+    </md-menu>
+
   </md-toolbar>
-  <div class="dates-list">
+
+  <md-sidenav #projectAdd class="slave" (close-start)="taskadd.hidden=false" align="end">
+    <button md-button (click)="projectAdd.close()">Close</button>
+    <button md-button md-icon-button class="plus-icon icons8-checkmark"></button>
+  </md-sidenav>
+
+  <div class="dates">
     <div class="date-wrap">
       <div class="date-wrap-head">
         <h2 class="text date">
@@ -34,7 +55,7 @@
       <md-card>
         <div class="card-list">
           <div class="card-item clearfix">
-            <a href="#" class="task-checkbox left"></a>
+            <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
             <p class="text left">Create a company</p>
           </div>
 
@@ -51,7 +72,7 @@
       <md-card>
         <div class="card-list">
           <div class="card-item clearfix">
-            <a href="#" class="task-checkbox left"></a>
+            <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
             <p class="text left">Call in barber shop</p>
           </div>
 
@@ -69,12 +90,12 @@
         <div class="card-list">
 
           <div class="card-item clearfix">
-            <a href="#" class="task-checkbox left"></a>
+            <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
             <p class="text left">Earn a lot of money</p>
           </div>
 
           <div class="card-item clearfix">
-            <a href="#" class="task-checkbox left"></a>
+            <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
             <p class="text left">Go to the shop</p>
           </div>
 
@@ -90,7 +111,7 @@
       <md-card>
         <div class="card-list">
           <div class="card-item clearfix">
-            <a href="#" class="task-checkbox left"></a>
+            <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
             <p class="text left">Buy gifts</p>
           </div>
 
@@ -106,7 +127,7 @@
       <md-card>
         <div class="card-list">
           <div class="card-item clearfix">
-            <a href="#" class="task-checkbox left"></a>
+            <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
             <p class="text left">Brush teeth</p>
           </div>
 
@@ -123,12 +144,12 @@
         <div class="card-list">
 
           <div class="card-item clearfix">
-            <a href="#" class="task-checkbox left"></a>
+            <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
             <p class="text left">Buy a plane tickets</p>
           </div>
 
           <div class="card-item clearfix">
-            <a href="#" class="task-checkbox left"></a>
+            <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
             <p class="text left">Fly away to the Thailand</p>
           </div>
 
@@ -140,4 +161,6 @@
 
   <router-outlet></router-outlet>
 </md-sidenav-container>
-<a href="#" class="plus icons8-plus"></a>
+<div #taskadd>
+<button md-button md-icon-button class="plus-icon icons8-plus"></button>
+</div>

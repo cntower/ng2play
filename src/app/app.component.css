@@ -30,14 +30,18 @@ p, h2, h3 {
 .text-left {
     text-align: left;
 }
+.md-sidenav-container {
+    background-color: #f7f7f7;
+}
 md-sidenav {
     color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    width: 565px;
     padding: 0 60px;
     background: #292c33;
 }
-
+md-sidenav.main {
+    width: 565px;
+}
 md-sidenav.md-sidenav-opened, md-sidenav.md-sidenav-opening {
     box-shadow: none;
 }
@@ -66,30 +70,23 @@ md-sidenav.md-sidenav-opened, md-sidenav.md-sidenav-opening {
     line-height: 97px;
     margin: 0 30px;
 }
-.projects-plus a {
-    color: #fff;
-    font-size: 40px;
-    line-height: 97px;
-    /*margin-top: 3px;*/
-    margin-right: 22px;
-}
-md-sidenav button {
+md-sidenav.main .menu-btn {
     border-radius: 8px;
     height: 80px;
     width:100%;
 }
-md-sidenav button.active {
+.menu-btn.active {
     background: #6b6b99;
 }
-md-sidenav button h3 {
+md-sidenav.main .menu-btn h3.menu-btn-title {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0 0 0 15px;
     line-height: 80px;
     font-size: 30px; 
     font-weight: 500;
-    letter-spacing: 1pt;
-        
+    letter-spacing: 1pt;        
 }
-md-sidenav button p {
+md-sidenav .menu-btn p {
     margin: 0 15px 0 0;
     line-height: 80px;
     font-size: 30px; 
@@ -100,23 +97,9 @@ md-sidenav button p {
     left: 0;
     bottom: 26px;
 }
-.plus {
-    display: inline-block;
-    position: fixed;
-    right: 60px;
-    bottom: 60px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: #6b6b99;
-    color: #fff;
-    font-size: 60px;
-    text-align: center;
-    line-height: 100px;
-}
-.dates-list {
+.dates {
     position: relative;
-    padding: 100px 460px; 
+    padding: 0 460px; 
 }
 md-card {
     padding: 0;
@@ -151,13 +134,17 @@ md-card {
     padding-left: 33px;
     letter-spacing: 0.5pt;
 }
+.task-btn {
+    width: 100px;
+    height: 100px;
+    margin: 10px 36px;
+}
 .task-checkbox {
-    display: block;
     width: 28px;
     height: 28px;
     border: 6px solid #bdbdbd;
     border-radius: 50%;
-    margin: 40px 65px;
+    margin: auto auto;
 }
 .task-checkbox:after {
     margin-left: 98px;
@@ -177,4 +164,70 @@ md-card {
 }
 .card-item:last-child:after {
     width: 0;
+}
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}
+md-toolbar {
+    height: 100px;
+    border-bottom: 1px solid #bdbdbd;
+    background-color: #f7f7f7;
+}
+.bar-icon {
+    color: #b3bbcb;    
+    font-size: 55px;
+    width: 94px;
+    height: 94px;
+    margin-bottom: -36px;
+    margin-right: -3px;
+}
+.plus-icon {
+    position: fixed;
+    right: 60px;
+    bottom: 60px;    
+    background: #6b6b99;
+    color: #fff;
+    font-size: 60px;
+    width: 100px;
+    height:100px;
+}
+.plus-icon.icons8-checkmark{
+    font-size: 45px;
+    margin-right: -58px;
+}
+.projects-plus-icon {
+    width:60px;
+    height:60px;
+    color: #fff;    
+    font-size: 40px;
+    margin-top: 20px;
+    margin-right: 12px;    
+}
+button.drop-menu {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 80px;
+    width: 240px;
+    font-size: 30px;
+    line-height: 80px;
+}
+button.drop-menu i {
+    font-size: 55px;
+    margin: 0 20px;
+}
+button.drop-menu span {
+    margin-right: 20px;
+}
+.shadow {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    box-shadow: 6px 12px 40px 0px rgba(0, 0, 0, 0.20); 
+    margin: -8px 0;
+}
+md-sidenav.md-sidenav-end.md-sidenav-opened {
+    box-shadow: none;
+}
+md-sidenav.slave {
+    padding: 0;
+    width:1000px;
 }
