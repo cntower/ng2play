@@ -1,3 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 @import './fonts/css/styles.min.css';
+
+body {
+    zoom: 50%;
+}
+
+@media (min-resolution: 192dpi),           /* Нормальные браузеры */
+       (-webkit-min-device-pixel-ratio: 2)  /* Webkit */ {
+    body {
+        zoom: 100%;
+    }
+}
