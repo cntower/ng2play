@@ -5,28 +5,29 @@ import { HttpModule } from '@angular/http';
 
 import { RouterModule, Routes } from '@angular/router';
 
-import {MaterialModule} from '@angular/material';
+import { MaterialModule } from '@angular/material';
 
+import { ProjectService, TaskService } from './model';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 
-const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent},
-];
+import { ProjectListComponent } from './project/project-list/project-list.component';
+
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
     MaterialModule.forRoot()
   ],
-  providers: [],
+  providers: [ProjectService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

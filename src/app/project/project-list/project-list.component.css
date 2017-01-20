@@ -1,0 +1,49 @@
+.log-out {
+    position: absolute;
+    left: 0;
+    bottom: 26px;
+}
+.projects-plus-icon {
+    width:60px;
+    height:60px;
+    color: #fff;    
+    font-size: 40px;
+    margin-top: 20px;
+    margin-right: 12px;    
+}
+.bar-icon {
+    color: #b3bbcb;    
+    font-size: 55px;
+    width: 94px;
+    height: 94px;
+    margin-bottom: -36px;
+    margin-right: -3px;
+}
+.plus-icon {
+    position: fixed;
+    right: 60px;
+    bottom: 60px;    
+    background: #6b6b99;
+    color: #fff;
+    font-size: 60px;
+    width: 100px;
+    height:100px;
+}
+.plus-icon.icons8-checkmark{
+    font-size: 45px;
+    margin-right: 0px;
+}
+.esc-btn {
+    margin-top: 20px;
+    padding-top: 20px;
+    color: #fff;
+    font-size: 50px;
+    width: 100px;
+    height: 100px;
+}
+.esc-btn:after {
+    margin-top: -10px;
+    font-size: 18px;
+    content:'ESC';
+    display: block;
+}

@@ -1,0 +1,21 @@
+<div class="date-wrap" *ngFor="let taskGroup of taskGroups | async ">
+  <div class="date-wrap-head">
+    <h2 class="text date">
+      {{getDayOfWeek(taskGroup.getDateCreated())}}      
+      <span *ngIf="['Today','Tomorrow'].indexOf(getDayOfWeek(taskGroup.getDateCreated())) === -1">
+        ({{taskGroup.getDateCreated().toLocaleDateString()}})
+        </span>
+    </h2>
+  </div>
+  <md-card>
+    <div class="card-list" *ngFor="let task of taskGroup.tasks">
+      <div class="card-item clearfix">
+        <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
+        <div class="card-item-tail">
+          <button md-button class="text left">{{task.title}}</button>
+        </div>
+      </div>
+
+    </div>
+  </md-card>
+</div>
