@@ -8,8 +8,8 @@
     </h2>
   </div>
   <md-card>
-    <div class="card-list" *ngFor="let task of taskGroup.tasks">
-      <div class="card-item clearfix">
+    <div class="card-list">
+      <div class="card-item clearfix " *ngFor="let task of taskGroup.tasks">
         <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
         <div class="card-item-tail">
           <button md-button class="text left">{{task.title}}</button>
