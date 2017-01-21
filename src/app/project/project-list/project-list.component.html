@@ -40,12 +40,11 @@
   </md-toolbar>
 
   <md-sidenav #sidenavRight class="slave m2app-dark" [opened]="rightOpened" (close-start)="onSlaveClose()" align="end">
-    <button md-icon-button class="esc-btn icons8-delete-2 left" (click)="sidenavRight.close()"></button>
-    <router-outlet></router-outlet>
-
+    <button md-icon-button class="esc-btn icons8-delete-2 left" (click)="sidenavRight.close()"></button>    
     <div class="container">
-    </div>
+      <router-outlet></router-outlet>
 
+    </div>
     <button md-button md-icon-button class="plus-icon icons8-checkmark"></button>
   </md-sidenav>
   <div class="dates">
