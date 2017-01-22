@@ -32,7 +32,7 @@ export class TaskShowComponent implements OnInit {
   }
 
   save(task: Task) {
-    this.taskService.updateTask(task).then(t=>console.log(t))
+    this.taskService.updateTask(task);
   }
 
 }
