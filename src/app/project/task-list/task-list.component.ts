@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { Project, TaskService, Task } from '../../model';
 
 @Component({
@@ -8,21 +8,25 @@ import { Project, TaskService, Task } from '../../model';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  projectTitle: String;
+  //projectTitle: String;
   _project: Project = null;
   tasks: Promise<Task[]>;
   taskGroups: Promise<any[]>;
+  selectedTask: Task;
 
-  constructor(private taskService: TaskService) { }
+  constructor(
+    private taskService: TaskService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
   @Input() set project(project: Project) {
     if (project !== null && project !== undefined) {
-      this.projectTitle = project.title;
+      //this.projectTitle = project.title;
       this._project = project;
-      this.tasks = this.taskService.getTasks(project.id);
+      //this.tasks = this.taskService.getTasks(project.id);
       this.taskGroups = this.taskService.getTaskGroups(project.id);
     }
   }
@@ -46,6 +50,11 @@ export class TaskListComponent implements OnInit {
     }
     return days[date.getDay()];
 
+  }
+
+  onSelect(task: Task) {
+    this.selectedTask = task;
+    this.router.navigate([`../projects/${this.project.id}/tasks`, this.selectedTask.id]);
   }
 
 }

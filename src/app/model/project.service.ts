@@ -7,6 +7,8 @@ import { PROJECTS } from './test-projects';
 //Dummy ProjectService. Pretend it makes real http requests
 export class ProjectService {
 
+  public takenProjectId: number;
+
   getProdjects() {
     return Promise.resolve(PROJECTS);
   }
@@ -15,6 +17,9 @@ export class ProjectService {
     if (typeof id === 'string') {
       id = parseInt(id as string, 10);
     }
+    
+    this.takenProjectId = id;
+
     return this.getProdjects().then(
       heroes => heroes.find(hero => hero.id === id)
     );

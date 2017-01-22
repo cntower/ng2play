@@ -1,10 +1,10 @@
 <div #openTask>
-  <button md-icon-button class="delete-tack-btn icons8-delete right"></button>
-  <button md-icon-button class="edit-tack-btn icons8-edit right"></button>
+  <button md-icon-button class="delete-task-btn icons8-delete right"></button>
+  <button md-icon-button class="edit-task-btn icons8-edit right"></button>
 
-  <h2 class="title">Call in barber shop</h2>
+  <h2 class="title">{{task?.title}}</h2>
   <md-input-container>
-    <textarea disabled class="slave-textarea" md-input>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <textarea disabled class="slave-textarea" md-input>{{task?.description}}
           </textarea>
   </md-input-container>
 </div>

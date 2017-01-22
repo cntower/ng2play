@@ -40,7 +40,7 @@
   </md-toolbar>
 
   <md-sidenav #sidenavRight class="slave m2app-dark" [opened]="rightOpened" (close-start)="onSlaveClose()" align="end">
-    <button md-icon-button class="esc-btn icons8-delete-2 left" (click)="sidenavRight.close()"></button>    
+    <button md-icon-button class="esc-btn icons8-delete-2 left" (click)="sidenavRight.close(); sidenavRight.opened = false"></button>
     <div class="container">
       <router-outlet></router-outlet>
 

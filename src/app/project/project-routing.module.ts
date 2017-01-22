@@ -29,7 +29,7 @@ const routes: Routes = [
                 component: TaskNewComponent
             },
             {
-                path: 'tasks/show',
+                path: 'tasks/:id',
                 component: TaskShowComponent
             }
         ]

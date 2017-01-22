@@ -12,7 +12,7 @@
       <div class="card-item clearfix " *ngFor="let task of taskGroup.tasks">
         <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
         <div class="card-item-tail">
-          <button md-button class="text left">{{task.title}}</button>
+          <button md-button class="text left" (click)="onSelect(task)">{{task.title}}</button>
         </div>
       </div>
 

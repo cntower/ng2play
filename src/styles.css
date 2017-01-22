@@ -165,21 +165,3 @@ label.md-input-placeholder {
     color: #dbdbdb;
     resize: vertical;    
 }
-.delete-tack-btn {
-    color: #51555e;
-    height: 75px;
-    width: 75px;
-    position: absolute;
-    right: 35px;
-    top: 40px;
-    font-size: 40px;
-}
-.edit-tack-btn {
-    color: #51555e;    
-    height: 75px;
-    width: 75px;
-    position: absolute;
-    right: 115px;
-    top: 40px;
-    font-size: 40px;
-}

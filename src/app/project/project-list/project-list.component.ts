@@ -1,9 +1,9 @@
-import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { Project, ProjectService } from '../../model';
-import { Observable } from 'rxjs/Rx';
+import { MdSidenav } from '@angular/material';
 
-import 'rxjs/add/operator/map';
+import { Project, ProjectService, UxService } from '../../model';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -17,22 +17,30 @@ export class ProjectListComponent implements OnInit {
   @Input()
   public selectedProject: Project;
   private rightOpened = false;
+  private data: Observable<boolean>
+
+  @ViewChild('sidenavRight')
+  sidenavRight: MdSidenav;
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private router: Router,
     private route: ActivatedRoute,
-    private projectService: ProjectService) { }
-
+    private projectService: ProjectService,
+    private uxService: UxService,
+  ) { }
 
   ngOnInit(): void {
-    if (this.route.snapshot.firstChild && this.route.snapshot.firstChild.url["0"].path) {
-      //console.log(this.route.snapshot.firstChild.url["0"].path);
-      this.rightOpened = true;
+    this.uxService.sidenavRightOpened.subscribe(opened => {
+      if (opened) this.sidenavRight.open()
+    });
 
+    if (this.route.snapshot.firstChild && this.route.snapshot.firstChild.url["0"].path) {
+      this.rightOpened = true;
     }
+
     this.route.params
-      .switchMap((params: Params) => Observable.fromPromise(this.projectService.getProject(params['id'])))
+      .switchMap((params: Params) => { return this.projectService.getProject(params['id']) })
       .subscribe(project => {
         if (project) { this.selectedProject = project; }
       });

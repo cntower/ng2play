@@ -35,12 +35,12 @@ export class TaskService {
     )
   }
 
-  getTask(id: number | string) {
+  getTask(id: number | string, projectId?: number) {
     if (typeof id === 'string') {
       id = parseInt(id as string, 10);
     }
     return Promise.resolve(TASKS).then(
-      tasks => tasks.find(task => task.id === id)
+      tasks => projectId ? tasks.find(task => task.id === id && task.project.id === projectId) : tasks.find(task => task.id === id)
     );
   }
 

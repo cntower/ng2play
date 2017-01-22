@@ -9,7 +9,7 @@ import { TaskListComponent } from './task-list/task-list.component';
 
 import { TaskNewComponent } from './task-new/task-new.component';
 import { TaskShowComponent } from './task-show/task-show.component';
-
+import { UxService } from './../model';
 
 @NgModule({
   imports: [
@@ -24,19 +24,9 @@ import { TaskShowComponent } from './task-show/task-show.component';
     TaskListComponent,
     TaskNewComponent,
     TaskShowComponent,
+    ],
+    providers: [
+      UxService
     ]
 })
 export class ProjectModule { }
-
-
-/**
- * import { NgModule }     from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
-import { routedComponents, HeroRoutingModule } from './hero-routing.module';
-
-@NgModule({
-  imports:      [ SharedModule, HeroRoutingModule ],
-  declarations: [ routedComponents ]
-})
-export class HeroModule { }
- */
