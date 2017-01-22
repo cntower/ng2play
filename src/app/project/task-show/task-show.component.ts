@@ -12,13 +12,14 @@ import { Task, TaskService, ProjectService, UxService } from '../../model';
 })
 export class TaskShowComponent implements OnInit {
   public task: Task
-
   constructor(
     private route: ActivatedRoute,
     private taskService: TaskService,
     private projectService: ProjectService,
     private uxService: UxService
-  ) { }
+  ) { 
+    this.task = new Task();
+  }
 
   ngOnInit() {
     this.route.params
@@ -28,6 +29,10 @@ export class TaskShowComponent implements OnInit {
         this.uxService.setSidenavRightOpened(true);
       })
 
+  }
+
+  save(task: Task) {
+    this.taskService.updateTask(task).then(t=>console.log(t))
   }
 
 }

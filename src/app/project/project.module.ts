@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 import { routedComponents, ProjectRoutingModule } from './project-routing.module';
 
@@ -15,18 +16,18 @@ import { UxService } from './../model';
   imports: [
     CommonModule,
     ProjectRoutingModule,
-    MaterialModule.forRoot()
-
+    MaterialModule.forRoot(),
+    FormsModule
   ],
   declarations: [
-    routedComponents, 
-    ProjectNewComponent, 
+    routedComponents,
+    ProjectNewComponent,
     TaskListComponent,
     TaskNewComponent,
     TaskShowComponent,
-    ],
-    providers: [
-      UxService
-    ]
+  ],
+  providers: [
+    UxService
+  ]
 })
 export class ProjectModule { }

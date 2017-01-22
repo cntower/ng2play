@@ -17,3 +17,17 @@
     top: 40px;
     font-size: 40px;
 }
+.plus-icon {
+    position: fixed;
+    right: 60px;
+    bottom: 60px;    
+    background: #6b6b99;
+    color: #fff;
+    font-size: 60px;
+    width: 100px;
+    height:100px;
+}
+.plus-icon.icons8-checkmark{
+    font-size: 45px;
+    margin-right: 0px;
+}
