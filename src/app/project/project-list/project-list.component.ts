@@ -32,7 +32,11 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit(): void {
     this.uxService.sidenavRightOpened.subscribe(opened => {
-      if (opened) this.sidenavRight.open()
+      if (opened) {
+        this.sidenavRight.open()
+      } else {
+        this.sidenavRight.close()
+      }
     });
 
     if (this.route.snapshot.firstChild && this.route.snapshot.firstChild.url["0"].path) {

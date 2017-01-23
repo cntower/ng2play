@@ -33,6 +33,7 @@ export class TaskShowComponent implements OnInit {
 
   save(task: Task) {
     this.taskService.updateTask(task);
+    this.uxService.setSidenavRightOpened(false);
   }
 
 }
