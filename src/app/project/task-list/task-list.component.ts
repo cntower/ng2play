@@ -5,7 +5,7 @@ import { Project, TaskService, Task } from '../../model';
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.css']
+  styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent implements OnInit {
   //projectTitle: String;

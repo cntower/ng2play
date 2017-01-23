@@ -8,7 +8,7 @@ import { Task, TaskService, ProjectService, UxService } from '../../model';
 @Component({
   selector: 'app-task-show',
   templateUrl: './task-show.component.html',
-  styleUrls: ['./task-show.component.css']
+  styleUrls: ['./task-show.component.scss']
 })
 export class TaskShowComponent implements OnInit {
   public task: Task
