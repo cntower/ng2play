@@ -48,11 +48,36 @@ p, h2, h3 {
 .md-sidenav-container {
     background-color: #f7f7f7;
 }
-md-sidenav.main {
-    width: 565px;
-}
-md-sidenav.md-sidenav-opened, md-sidenav.md-sidenav-opening {
-    box-shadow: none;
+md-sidenav {
+    &.main {
+        width: 565px;
+        .menu-btn {
+            border-radius: 8px;
+            height: 80px;
+            width:100%;
+            &.active {
+                background: #6b6b99;
+            }
+            p {
+                margin: 0 15px 0 0;
+                line-height: 80px;
+                font-size: 30px; 
+                font-weight: 500; 
+            }
+            h3.menu-btn-title {
+                font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+                margin: 0 0 0 15px;
+                line-height: 80px;
+                font-size: 30px; 
+                font-weight: 500;
+                letter-spacing: 1pt;        
+            }
+        }
+    }
+    &.md-sidenav-opened, 
+    &.md-sidenav-opening {
+        box-shadow: none;
+    }
 }
 .user-photo {
     width: 100px;
@@ -64,43 +89,25 @@ md-sidenav.md-sidenav-opened, md-sidenav.md-sidenav-opening {
 }
 .user-wrap {
     margin: 40px 0;
+    h2 {
+        font-size: 30px;
+        letter-spacing: .8pt;
+        font-weight: 500;
+        line-height: 120px;
+        margin: 0 40px;
+    }
 }
-.user-wrap h2{
-    font-size: 30px;
-    letter-spacing: .8pt;
-    font-weight: 500;
-    line-height: 120px;
-    margin: 0 40px;
+
+.projects-plus {
+    h3 {
+        font-size: 24px;
+        letter-spacing: 1pt;
+        font-weight: 500;
+        line-height: 97px;
+        margin: 0 30px;
+    }
 }
-.projects-plus h3 {
-    font-size: 24px;
-    letter-spacing: 1pt;
-    font-weight: 500;
-    line-height: 97px;
-    margin: 0 30px;
-}
-md-sidenav.main .menu-btn {
-    border-radius: 8px;
-    height: 80px;
-    width:100%;
-}
-.menu-btn.active {
-    background: #6b6b99;
-}
-md-sidenav.main .menu-btn h3.menu-btn-title {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    margin: 0 0 0 15px;
-    line-height: 80px;
-    font-size: 30px; 
-    font-weight: 500;
-    letter-spacing: 1pt;        
-}
-md-sidenav .menu-btn p {
-    margin: 0 15px 0 0;
-    line-height: 80px;
-    font-size: 30px; 
-    font-weight: 500; 
-}
+
 .dates {
     position: relative;
     padding: 0 460px; 
@@ -118,13 +125,13 @@ button.drop-menu {
     width: 240px;
     font-size: 30px;
     line-height: 80px;
-}
-button.drop-menu i {
-    font-size: 55px;
-    margin: 0 20px;
-}
-button.drop-menu span {
-    margin-right: 20px;
+    i {
+        font-size: 55px;
+        margin: 0 20px;
+    }
+    span {
+        margin-right: 20px;
+    }
 }
 .shadow {
     width: 100%;
@@ -133,21 +140,24 @@ button.drop-menu span {
     box-shadow: 6px 12px 40px 0px rgba(0, 0, 0, 0.20); 
     margin: -8px 0;
 }
-.slave .title {
-    font-size: 36px;
-    letter-spacing: 1.15pt;
-    font-weight: normal;
-    text-align: center;
-    margin-top: 60px;
+.slave {
+    .title {
+        font-size: 36px;
+        letter-spacing: 1.15pt;
+        font-weight: normal;
+        text-align: center;
+        margin-top: 60px;
+    }
+    .container {
+        height: 60%;    
+        margin: 0 158px;
+    }
+    md-input-container {
+        width: 100%;
+        margin-top: 50px;
+    }
 }
-.slave .container {
-    height: 60%;    
-    margin: 0 158px;
-}
-.slave md-input-container {
-    width: 100%;
-    margin-top: 50px;
-}
+
 label.md-input-placeholder {
     margin-left: 10px;
 }
