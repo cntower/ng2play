@@ -1,5 +1,5 @@
 .filter-input {
-    width: 50%;
+    width: 100%;
     font-size: 100%;
 }
 .item {
@@ -18,9 +18,14 @@
 }
 
 .suggestions {
-    width: 30.1%;
+    width: 50%;
     cursor: pointer;
     z-index: 9999;
     position: absolute;
     background:#e6e6e6;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    .scroll{
+        max-height: 15em;
+        overflow: auto;
+    }
 }

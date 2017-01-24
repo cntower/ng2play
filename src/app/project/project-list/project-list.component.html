@@ -1,26 +1,30 @@
 <md-sidenav-container fullscreen>
   <md-sidenav class="main" mode="side" opened="true">
-
-    <div class="user-wrap clearfix">
-      <img src="assets/img/photo.png" alt="" class="user-photo left">
-      <h2 class="user-name left">
-        Trevor Reyes
-      </h2>
-    </div>
-    <div class="projects-plus clearfix">
-      <h3 class="left">
-        Projects
-      </h3>
-      <button md-button md-icon-button class="projects-plus-icon icons8-plus right" (click)="sidenavRight.open()" [routerLink]="['/projects/new']">
+    <div class="main-side-container">
+      <div class="user-wrap clearfix">
+        <img src="assets/img/photo.png" alt="" class="user-photo left">
+        <h2 class="user-name left">
+          Trevor Reyes
+        </h2>
+      </div>
+      <div class="projects-plus clearfix">
+        <h3 class="left">
+          Projects
+        </h3>
+        <button md-button md-icon-button class="projects-plus-icon icons8-plus right" (click)="sidenavRight.open()" [routerLink]="['/projects/new']">
       </button>
-    </div>
+      </div>
 
-    <div class="projects">
-      <button *ngFor="let project of projects | async " [class.active]="project.id === selectedProject?.id" (click)="onSelect(project)"
-        md-button class="menu-btn left"><h3 class="menu-btn-title left">{{project.title}}</h3><p class="right">{{project.task_count}}</p></button>
-    </div>
-    <button md-button class="menu-btn log-out"><h3 class="menu-btn-title left">Log out</h3></button>
+      <div class="projects">
+        <button *ngFor="let project of projects | async " [class.active]="project.id === selectedProject?.id" (click)="onSelect(project)"
+          md-button class="menu-btn left"><h3 class="menu-btn-title left">{{project.title}}</h3><p class="right">{{project.task_count}}</p></button>
+      </div>
+      <div class="log-out-wrap">
+        <button md-button class="menu-btn log-out"><h3 class="menu-btn-title left">Log out</h3></button>
 
+      </div>
+
+    </div>
   </md-sidenav>
 
   <md-toolbar>
@@ -45,7 +49,7 @@
       <router-outlet></router-outlet>
 
     </div>
-    
+
   </md-sidenav>
   <div class="dates">
     <app-task-list *ngIf="selectedProject !== null" [project]="selectedProject"></app-task-list>

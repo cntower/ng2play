@@ -9,7 +9,7 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
   styleUrls: ['./auto-complite.component.scss']
 })
 export class AutoCompliteComponent {
-  
+
   //строка запроса
   public query = '';
 
@@ -63,34 +63,25 @@ export class AutoCompliteComponent {
     let key = event.which || event.keyCode;
     let el: HTMLElement;
 
-    
+
     if (row !== undefined) { // это кнопка
       switch (key) {
         case 9:
           this.filteredList = [];
           break;
         case 37:
-          el = this.getCel(row, col - 1)
-          if (el && el.textContent) { el.focus(); }
-          break;
+          return this.tryDoStep(row, col - 1)
         case 38:
-          el = this.getCel(row - 1, col)
-          if (el && el.textContent) {
-            el.focus();
+          if (this.tryDoStep(row - 1, col) === false) {
+            return false
           } else {
             this.elementRef.nativeElement.getElementsByTagName('input')[0].focus();
           }
           break;
         case 39:
-          el = this.getCel(row, col + 1)
-          if (el && el.textContent) { el.focus(); }
-          break;
+          return this.tryDoStep(row, col + 1)
         case 40:
-          el = this.getCel(row + 1, col)
-          if (el && el.textContent) {
-            el.focus();
-          }
-          break;
+          return this.tryDoStep(row + 1, col)
         case 27:
           this.filteredList = [];
           break;
@@ -123,6 +114,15 @@ export class AutoCompliteComponent {
 
   }
 
+  tryDoStep(row, col) {
+    let el = this.getCel(row, col)
+    if (el && el.textContent) {
+      el.focus();
+      event.stopPropagation();
+      return false;
+    }
+  }
+
   //в поле приходит фокус
   focusEvent() {
     this.filter();
@@ -146,7 +146,7 @@ export class AutoCompliteComponent {
     if (this.query !== "") {
       this.filteredList = this._data.filter(function (el) {
         return el.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
-      }.bind(this));
+      }.bind(this)).sort();
     } else {
       this.filteredList = [];
     }

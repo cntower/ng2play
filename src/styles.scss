@@ -2,15 +2,27 @@
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 @import './fonts/css/styles.min.css';
 
-body {
-    zoom: 50%;
-}
+// body {
+//     /*zoom: 0.5;
+//     -ms-zoom: 0.5;
+//     -webkit-zoom: 0.5;
+//     /*-moz-transform:  scale(0.5,0.5);
+//     -moz-transform-origin: left center;*/
+// }
 
-@media (min-resolution: 192dpi),           /* Нормальные браузеры */
-       (-webkit-min-device-pixel-ratio: 2)  /* Webkit */ {
-    body {
-        zoom: 100%;
-    }
+// @media (min-resolution: 192dpi),           /* Нормальные браузеры */
+//        (-webkit-min-device-pixel-ratio: 2)  /* Webkit */ {
+//     body {
+//         zoom: 100%;
+//     }
+// }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body, material-app, md-sidenav-container, .my-content {
@@ -49,28 +61,39 @@ p, h2, h3 {
     background-color: #f7f7f7;
 }
 md-sidenav {
+    .main-side-container {
+        padding: 0 8%;
+        width: 100%;
+        height: 100%;
+    }
     &.main {
-        width: 565px;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #292c33;
+    }
+    &.main {
+        width: 14%;
+        min-width: 343px;/*320*/
         .menu-btn {
             border-radius: 8px;
-            height: 80px;
             width:100%;
             &.active {
                 background: #6b6b99;
             }
             p {
-                margin: 0 15px 0 0;
-                line-height: 80px;
-                font-size: 30px; 
+                margin: 0 1% 0 0;
+                line-height: 275%;
+                font-size: 105%;
                 font-weight: 500; 
             }
             h3.menu-btn-title {
                 font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-                margin: 0 0 0 15px;
-                line-height: 80px;
-                font-size: 30px; 
+                margin: 0 0 0 1%;
+                line-height: 275%;
+                font-size: 105%;
                 font-weight: 500;
                 letter-spacing: 1pt;        
+                    
             }
         }
     }
@@ -80,31 +103,31 @@ md-sidenav {
     }
 }
 .user-photo {
-    width: 100px;
-    height: 100px;
-    border: #fff 2px solid;
-    padding: 8px;
+    width: 21%;
+    height: 21%;
+    border: #fff 0.1em solid;
+    padding: 1.1%;
     border-radius: 50%;
-    margin-left:20px;
+    margin-left: 4%;
 }
 .user-wrap {
-    margin: 40px 0;
+    padding-top: 7%;
     h2 {
-        font-size: 30px;
+        font-size: 85%;
         letter-spacing: .8pt;
         font-weight: 500;
-        line-height: 120px;
-        margin: 0 40px;
+        line-height: 450%;
+        margin-left: 7%;
     }
 }
 
 .projects-plus {
     h3 {
-        font-size: 24px;
+        font-size: 70%;
         letter-spacing: 1pt;
         font-weight: 500;
-        line-height: 97px;
-        margin: 0 30px;
+        margin: 0 6%;
+        margin-top: 13%;
     }
 }
 
@@ -174,4 +197,58 @@ label.md-input-placeholder {
     letter-spacing: 1.15pt;
     color: #dbdbdb;
     resize: vertical;    
+}
+.log-out-wrap{
+    /*@extend .main-side-container;*/
+    padding: 0 8%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 26px;
+}
+button.log-out {
+
+}
+button.projects-plus-icon {
+    width: 2.5em;
+    height: 2.5em;
+    color: #fff;
+    font-size: 120%;
+    margin-top: 7%;  
+}
+.bar-icon {
+    color: #b3bbcb;    
+    font-size: 55px;
+    width: 94px;
+    height: 94px;
+    margin-bottom: -36px;
+    margin-right: -3px;
+}
+.plus-icon {
+    position: fixed;
+    right: 60px;
+    bottom: 60px;    
+    background: #6b6b99;
+    color: #fff;
+    font-size: 60px;
+    width: 100px;
+    height:100px;
+    .icons8-checkmark{
+        font-size: 45px;
+        margin-right: 0px;
+    }
+}
+.esc-btn {
+    margin-top: 20px;
+    padding-top: 20px;
+    color: #fff;
+    font-size: 50px;
+    width: 100px;
+    height: 100px;
+    &:after {
+        margin-top: -10px;
+        font-size: 18px;
+        content:'ESC';
+        display: block;
+    }
 }
