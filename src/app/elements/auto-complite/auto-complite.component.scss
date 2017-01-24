@@ -1,0 +1,26 @@
+.filter-input {
+    width: 50%;
+    font-size: 100%;
+}
+.item {
+    border: none;
+    background: transparent;
+    display: inline-block;
+    width: 50%;
+    font-size: 100%;
+    &:hover {
+        background-color: rgba(0,0,0,.0588);
+    }
+    &:focus {
+        background-color: rgba(0,0,0,.16);
+        outline: none;
+    }
+}
+
+.suggestions {
+    width: 30.1%;
+    cursor: pointer;
+    z-index: 9999;
+    position: absolute;
+    background:#e6e6e6;
+}

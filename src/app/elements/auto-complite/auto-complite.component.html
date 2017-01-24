@@ -1,0 +1,13 @@
+<div class="container">
+
+  <div class="input-field col s12">
+    <input type="text" class="country validate filter-input" [(ngModel)]="query" (keyup)="keyEvent($event)" (focus)="focusEvent()" (focusout)="focusoutEvent($event)">
+  </div>
+
+  <div class="suggestions" *ngIf="filteredList.length > 0">
+    <div class="row" *ngFor="let row of filteredTable; let r = index;">  
+      <button *ngFor="let item of row; let c = index;" [attr.data-row]="r" [attr.data-col]="c" class="item" (click)="select(item)" (keyup)="keyEvent($event, r, c)">{{item}}</button>
+    </div>
+  </div>
+
+</div>

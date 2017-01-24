@@ -15,6 +15,8 @@ import { ProjectListComponent } from './project/project-list/project-list.compon
 
 import { AboutComponent } from './about/about.component';
 
+import { ElementsModule } from './elements/elements.module'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import { AboutComponent } from './about/about.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    ElementsModule
   ],
   providers: [ProjectService, TaskService],
   bootstrap: [AppComponent]
