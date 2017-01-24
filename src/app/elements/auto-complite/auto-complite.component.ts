@@ -9,8 +9,11 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
   styleUrls: ['./auto-complite.component.scss']
 })
 export class AutoCompliteComponent {
+  
+  //строка запроса
   public query = '';
 
+  //данные и данные по умолчанию
   private _data = ["Albania", "Andorra", "Armenia", "Austria", "Azerbaijan", "Belarus",
     "Belgium", "Bosnia & Herzegovina", "Bulgaria", "Croatia", "Cyprus",
     "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Georgia",
@@ -19,37 +22,49 @@ export class AutoCompliteComponent {
     "Moldova", "Monaco", "Montenegro", "Netherlands", "Norway", "Poland",
     "Portugal", "Romania", "Russia", "San Marino", "Serbia", "Slovakia", "Slovenia",
     "Spain", "Sweden", "Switzerland", "Turkey", "Ukraine", "United Kingdom", "Vatican City"];
+
+  //варианты заполнения
   private _filteredList = [];
+
+  //варианты заполнения форматированные таблично
   public filteredTable = [];
 
+  //ссылка на дом элемент этого компонента
   public elementRef;
 
+  //установка вариантов заполнения
   set filteredList(arr) {
     this._filteredList = arr;
     this.getFilteredTable();
   }
+
+  //получение вариантов заполнения
   get filteredList() {
     return this._filteredList;
   }
 
+  //установка исходных данных
   set data(arr) {
     this._data = arr;
   }
 
+  //получение исходных данных @Input()-позволяет получение из родителя
   @Input() get data() {
     return this._data;
   }
 
   constructor(myElement: ElementRef) {
+    //ссылка на элемент
     this.elementRef = myElement;
   }
 
+  // keyEvent элементов компонента
   keyEvent(event: KeyboardEvent, row?: number, col?: number) {
     let key = event.which || event.keyCode;
     let el: HTMLElement;
 
-
-    if (row !== undefined) {
+    
+    if (row !== undefined) { // это кнопка
       switch (key) {
         case 9:
           this.filteredList = [];
@@ -80,7 +95,7 @@ export class AutoCompliteComponent {
           this.filteredList = [];
           break;
       }
-    } else {
+    } else { // это инпут
       switch (key) {
         case 16:
           break;
@@ -108,20 +123,24 @@ export class AutoCompliteComponent {
 
   }
 
+  //в поле приходит фокус
   focusEvent() {
     this.filter();
   }
 
+  //потеря фокуса => убрать варианты заполнения если фокус перешел к чужому элементу
   focusoutEvent(event) {
     if (event.relatedTarget === null || !this.isInside(event.relatedTarget)) {
       this.filteredList = [];
     }
   }
 
+  //получить элемент ДОМ по строке/столбцу
   getCel(row: number, col: number) {
     return this.elementRef.nativeElement.querySelector(`[data-col='${col}'][data-row='${row}']`);
   }
 
+  //отбор вариантов
   filter() {
 
     if (this.query !== "") {
@@ -133,11 +152,13 @@ export class AutoCompliteComponent {
     }
   }
 
+  //подстановка выбранного варианта
   select(item) {
     this.query = item;
     this.filteredList = [];
   }
 
+  //проверка принадлежности элемента к компоненту
   isInside(target): boolean {
     var inside = false;
     do {
@@ -149,12 +170,14 @@ export class AutoCompliteComponent {
     return inside;
   }
 
+  //скрывает список вариантов при клике с наружи
   handleClick(event) {
     if (!this.isInside(event.target)) {
       this.filteredList = [];
     }
   }
 
+  //табличное представление списка
   getFilteredTable() {
 
     this.filteredTable = [];
@@ -163,13 +186,18 @@ export class AutoCompliteComponent {
     if (itemCount === 0) {
       return this.filteredTable;
     }
+
+    //число колонок
     let columnCount = 2;
+    //число строк
     let rowCount = Math.ceil(itemCount / columnCount);
     for (let i = 0; i < rowCount; i++) {
       let row = [];
       for (let j = 0; j < columnCount; j++) {
+        //ячейки в строку
         row.push(this.filteredList[i + j * rowCount]);
       }
+      //добавляет строки в таблицу
       this.filteredTable.push(row);
     }
   }
