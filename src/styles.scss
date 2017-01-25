@@ -39,7 +39,7 @@ p, h2, h3 {
 }
 .clearfix:before,
 .clearfix:after{
-    content: "";
+    content: " ";
     display: table;
 }
 .clearfix::after {
@@ -75,7 +75,7 @@ md-sidenav {
         width: 14%;
         min-width: 343px;/*320*/
         .menu-btn {
-            border-radius: 8px;
+            border-radius: 0.3em;
             width:100%;
             &.active {
                 background: #6b6b99;
@@ -132,11 +132,11 @@ md-sidenav {
 }
 
 .dates {
-    position: relative;
-    padding: 0 460px; 
+    position: relative; 
+    padding: 0 10%;
 }
 .date-wrap-head {
-    height: 82px;
+    height: 2.5em;
     position: relative;    
 }
 .example-fill-remaining-space {
@@ -216,14 +216,6 @@ button.projects-plus-icon {
     font-size: 120%;
     margin-top: 7%;  
 }
-.bar-icon {
-    color: #b3bbcb;    
-    font-size: 55px;
-    width: 94px;
-    height: 94px;
-    margin-bottom: -36px;
-    margin-right: -3px;
-}
 .plus-icon {
     position: fixed;
     right: 60px;
@@ -250,5 +242,113 @@ button.projects-plus-icon {
         font-size: 18px;
         content:'ESC';
         display: block;
+    }
+}
+
+.task-list {
+    md-toolbar {
+        min-height: 0;
+        padding: 0;
+        border-bottom: 1px solid #bdbdbd;
+        background-color: #f7f7f7;
+        md-toolbar-row {
+            height: auto;    
+        }
+    }
+    .bar-icon {
+        color: #b3bbcb;
+        font-size: 1.3em;
+        width: 2em;
+        height: 2em;
+    }
+    .card-item {
+        &-head {
+            width: 20%;
+            border-right: #eaeaea solid 1px;
+            margin: 0.5em auto;
+
+       /* margin-left: 172px;
+        margin-right: 20px;*/
+            /*&:after {
+                content: '';
+                display: block;
+                width: 2px;
+                height: 2em;
+                background-color: #eaeaea;
+                float: left;
+            }*/
+        }
+        &-tail {
+            width: 80%;
+       /* margin-left: 172px;
+        margin-right: 20px;*/
+        }
+
+        .text { /*btn*/
+            text-align: left;
+            width: 100%;
+            color: #212121;
+            padding-left: 33px;
+            padding-right: 35px;
+            letter-spacing: 0.5pt;
+            margin-top: 1em;
+            border-bottom-right-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+    }
+    .task-btn {
+        width: 3em;
+        height: 3em;
+        margin: auto;
+        display: block;
+    }
+    .task-checkbox {
+        width: 28px;
+        height: 28px;
+        border: 6px solid #bdbdbd;
+        border-radius: 50%;
+        margin: auto auto;
+    }
+    .card-item {
+        line-height: 2em;
+        .underline {
+            display: block;
+            border-bottom: #eaeaea solid 1px;
+            margin: 0 4em;
+            clear: both;
+            
+        }
+        &:last-child .underline {
+            display: none;
+            content:'';
+            width: 0;
+            height: 0;
+            margin: 0;
+        }
+    }
+    md-card {
+        padding: 0;
+        border-radius: 0.3em;;
+        box-shadow: 5px 9px 30px 0px rgba(0, 0, 0, 0.16); 
+    }
+
+    .date-wrap-head {
+        .text {
+            position: absolute;
+            bottom: 12px;
+            left: 15px;
+            color: #b3bbcb;
+            span {
+                font-size: 0.9em;
+                letter-spacing: 0;    
+            }
+        }
+    }
+
+    .text {
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 1em;
+        letter-spacing: 1pt;
+        font-weight: bold;    
     }
 }

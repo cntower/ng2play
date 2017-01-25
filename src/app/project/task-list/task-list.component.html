@@ -1,7 +1,7 @@
 <div class="date-wrap" *ngFor="let taskGroup of taskGroups | async ">
   <div class="date-wrap-head">
     <h2 class="text date">
-      {{getDayOfWeek(taskGroup.getDateCreated())}}      
+      {{getDayOfWeek(taskGroup.getDateCreated())}}
       <span *ngIf="['Today','Tomorrow'].indexOf(getDayOfWeek(taskGroup.getDateCreated())) === -1">
         ({{taskGroup.getDateCreated().toLocaleDateString()}})
         </span>
@@ -9,11 +9,17 @@
   </div>
   <md-card>
     <div class="card-list">
-      <div class="card-item clearfix " *ngFor="let task of taskGroup.tasks">
-        <button md-button md-icon-button class="task-btn left"><div class="task-checkbox"></div></button>
-        <div class="card-item-tail">
-          <button md-button class="text left" (click)="onSelect(task)">{{task.title}}</button>
+      <div class="card-item" *ngFor="let task of taskGroup.tasks">
+        <div class="clearfix">
+          <div class="card-item-head left">
+            <button md-button md-icon-button class="task-btn"><div class="task-checkbox"></div></button>
+          </div>
+          <div class="card-item-tail left">
+            <button md-button class="text left" (click)="onSelect(task)">{{task.title}}</button>
+          </div>
         </div>
+        <div class="underline"></div>
+        
       </div>
 
     </div>

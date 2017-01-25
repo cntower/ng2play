@@ -27,21 +27,27 @@
     </div>
   </md-sidenav>
 
-  <md-toolbar>
+  <div class="task-list">
+    <md-toolbar>
 
-    <button md-button md-icon-button class="bar-icon icons8-search"></button>
-    <!-- This fills the remaining space of the current row -->
-    <span class="example-fill-remaining-space"></span>
+      <button md-button md-icon-button class="bar-icon icons8-search"></button>
+      <!-- This fills the remaining space of the current row -->
+      <span class="example-fill-remaining-space"></span>
 
-    <button md-icon-button class="bar-icon icons8-more" [mdMenuTriggerFor]="menu"></button>
-    <md-menu #menu="mdMenu">
-      <div class="shadow">
-      </div>
-      <button class="drop-menu" md-menu-item><i class="icons8-edit left"></i><span>Edit</span></button>
-      <button class="drop-menu" md-menu-item><i class="icons8-delete left"></i><span>Delete</span></button>
-    </md-menu>
+      <button md-icon-button class="bar-icon icons8-more" [mdMenuTriggerFor]="menu"></button>
+      <md-menu #menu="mdMenu">
+        <div class="shadow">
+        </div>
+        <button class="drop-menu" md-menu-item><i class="icons8-edit left"></i><span>Edit</span></button>
+        <button class="drop-menu" md-menu-item><i class="icons8-delete left"></i><span>Delete</span></button>
+      </md-menu>
 
-  </md-toolbar>
+    </md-toolbar>
+
+    <div class="dates">
+      <app-task-list *ngIf="selectedProject !== null" [project]="selectedProject"></app-task-list>
+    </div>
+  </div>
 
   <md-sidenav #sidenavRight class="slave m2app-dark" [opened]="rightOpened" (close-start)="onSlaveClose()" align="end">
     <button md-icon-button class="esc-btn icons8-delete-2 left" (click)="sidenavRight.close(); sidenavRight.opened = false"></button>
@@ -51,9 +57,7 @@
     </div>
 
   </md-sidenav>
-  <div class="dates">
-    <app-task-list *ngIf="selectedProject !== null" [project]="selectedProject"></app-task-list>
-  </div>
+
 </md-sidenav-container>
 <div #taskAddBtn *ngIf="selectedProject && sidenavRight.opened === false">
   <button md-button md-icon-button class="plus-icon icons8-plus" (click)="sidenavRight.open()" [routerLink]="['tasks/new']"></button>
