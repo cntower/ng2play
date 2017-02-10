@@ -53,6 +53,9 @@ export class ProjectListComponent implements OnInit {
   }
 
   onSelect(project: Project) {
+    this.projectService.getP2().subscribe(project => {
+        if (project) { console.log(project) }
+      });
     this.selectedProject = project;
     this.router.navigate(['../projects', project.id]);
   }
